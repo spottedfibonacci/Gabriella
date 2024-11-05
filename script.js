@@ -1,5 +1,14 @@
 
 const questions = [
+        {
+      question: "Gabriella cosa fa la mattina dopo la colazione?",
+      answers: [
+        {text: "Si lava i denti", correct: false},
+        {text: "Mangia ancora", correct: false},
+        {text: "Pulisce camera", correct: false},
+        {text: "La cacca che puzza 😱 ", correct: true}
+      ]
+    },
     {
       question: "Quale aggettivo si addice a Gabriella?",
       answers: [
