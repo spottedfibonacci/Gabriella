@@ -28,9 +28,9 @@ const questions = [
     {
       question: "La riproduzione verticale analogica e digitale di un bene d'informazione:",
       answers: [
-        {text: "Rende superflua l'appropriazione indiretta da parte del produttore originale", correct: true},
+        {text: "Rende superflua l'appropriazione indiretta da parte del produttore originale", correct: false},
         {text: "È sempre viziata dal degradamento qualitativo delle copie", correct: false},
-        {text: "Ha effetti diversi sul degradamento delle copie", correct: false}
+        {text: "Ha effetti diversi sul degradamento delle copie", correct: true}
       ]
     },
     {
@@ -130,9 +130,9 @@ const questions = [
     {
       question: "La discriminazione di prezzo rivolta ai consumatori privati:",
       answers: [
-        {text: "Implica che il prezzo di vendita includa una appropriazione indiretta basata su una stima probabilistica del numero medio di copie concesse dal consumatore", correct: false},
+        {text: "Implica che il prezzo di vendita includa una appropriazione indiretta basata su una stima probabilistica del numero medio di copie concesse dal consumatore", correct: true},
         {text: "È uguale a quella diretta a consumatori istituzionali", correct: false},
-        {text: "Include una appropriazione indiretta basata sul numero di fruizioni del prodotto", correct: true}
+        {text: "Include una appropriazione indiretta basata sul numero di fruizioni del prodotto", correct: false}
       ]
     },
     {
@@ -173,22 +173,6 @@ const questions = [
         {text: "Vendere a prezzi diversi lo stesso bene, a seconda della quantità acquistata", correct: false},
         {text: "Progettare e fornire versioni su misura per le differenti necessità dei clienti", correct: true},
         {text: "Vendere sempre la versione tecnologicamente più avanzata del prodotto", correct: false}
-      ]
-    },
-    {
-      question: "Se i T&C di un bene di informazione diventano più liberali?",
-      answers: [
-        {text: "Aumenta la disponibilità a pagare dei consumatori ma può diminuire il numero dei consumatori paganti", correct: true},
-        {text: "Diminuisce la disponibilità a pagare dei consumatori ma può aumentare il numero dei consumatori paganti", correct: false},
-        {text: "A parità di disponibilità a pagare dei consumatori, aumenta il numero dei consumatori paganti", correct: false}
-      ]
-    },
-    {
-      question: "Se i T&C di un bene di informazione divengono più liberali, il coefficiente b (fattore di variazione della quantità venduta):",
-      answers: [
-        {text: "È compreso tra 0 e 1", correct: true},
-        {text: "È > 1", correct: false},
-        {text: "Assume valori negativi", correct: false}
       ]
     },
     {
@@ -277,14 +261,6 @@ const questions = [
           {text: "La non rivalità incentiva il free riding", correct: false},
           {text: "La non rivalità è incompatibile con un prezzo positivo attribuito a unità aggiuntive di tali beni", correct: true},
           {text: "La non escludibilità", correct: false}
-        ]
-      },
-      {
-        question: "Se i T&C di un bene di informazione diventano più liberali",
-        answers: [
-          {text: "A parità di disponibilità a pagare dei consumatori, aumenta il numero dei consumatori paganti", correct: false},
-          {text: "A parità di disponibilità a pagare dei consumatori, ma può diminuire il numero dei consumatori paganti", correct: true},
-          {text: "A parità di disponibilità a pagare dei consumatori, ma può aumentare il numero dei consumatori paganti", correct: false}
         ]
       },
       {
@@ -574,8 +550,8 @@ const questions = [
         question: "Secondo il teorema di Coase, una transazione per trasferire la proprietà intellettuale è efficiente se",
         answers: [
             {text: "I costi di transazione sono nulli anche se i diritti di proprietà sono chiaramente definiti", correct: false},
-            {text: "I costi di transazione sono bassi e i diritti di proprietà sono chiaramente definiti", correct: true},
-            {text: "I costi di transazione sono nulli e i diritti di proprietà sono chiaramente definiti", correct: false}
+            {text: "I costi di transazione sono bassi e i diritti di proprietà sono chiaramente definiti", correct: false},
+            {text: "I costi di transazione sono nulli e i diritti di proprietà sono chiaramente definiti", correct: true}
         ]
     },
     {
@@ -659,10 +635,10 @@ const questions = [
         ]
     },
     {
-        question: "Risultati della selezione avversa sono?",
+        question: "Risultati delle asimmetrie informative sono?",
         answers: [
             {text: "Azzardo morale", correct: true},
-            {text: "Selezione avversa", correct: true},
+            {text: "Selezione avversa", correct: false},
             {text: "Concorrenza perfetta", correct: false},
             {text: "Efficienza informativa", correct: false}
         ]
@@ -775,7 +751,7 @@ const questionElement = document.getElementById("question");
   
   function showScore(){
     resetState();
-    questionElement.innerHTML = `Hai ottenuto un punteggio di ${score} su 20!`;
+    questionElement.innerHTML = `Hai ottenuto un punteggio di ${score} su 40!`;
     nextButton.innerHTML = "Gioca Ancora";
     nextButton.style.display = "block"
   }
@@ -783,7 +759,7 @@ const questionElement = document.getElementById("question");
 
 function handleNextButton() {
   currentQuestionIndex++;
-  if (currentQuestionIndex < 20) { // Change 20 to the desired number of questions
+  if (currentQuestionIndex < 40) { // Change 20 to the desired number of questions
     showQuestion();
   } else {
     showScore();
